@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #9b59b6, #6c5ce7);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            grid-column: 1 / -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6c5ce7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .article {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+        }
+
+        .article h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        aside {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .widget {
+            margin-bottom: 20px;
+        }
+
+        .widget h3 {
+            color: #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #6c5ce7;
+        }
+
+        .widget ul {
+            list-style: none;
+        }
+
+        .widget ul li {
+            padding: 5px 0;
+        }
+
+        .widget ul li a {
+            color: #444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .widget ul li a:hover {
+            color: #6c5ce7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">我的博客</div>
+                <div class="nav-links">
+                    <a href="#">首页</a>
+                    <a href="#">文章</a>
+                    <a href="#">分类</a>
+                    <a href="#">关于</a>
+                    <a href="#">联系</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <article class="article">
+                <h2>这是一篇博客文章标题</h2>
+                <div class="article-meta">发布于 2024-01-20 | 分类：技术</div>
+                <p>这是文章的摘要内容。在这里你可以看到文章的简短描述，让读者对文章内容有一个基本的了解。点击标题可以查看完整文章。</p>
+            </article>
+
+            <article class="article">
+                <h2>另一篇精彩的博客文章</h2>
+                <div class="article-meta">发布于 2024-01-19 | 分类：生活</div>
+                <p>这是另一篇文章的摘要。每篇文章都有其独特的见解和精彩内容，欢迎点击阅读更多。</p>
+            </article>
+
+            <article class="article">
+                <h2>分享一些有趣的想法</h2>
+                <div class="article-meta">发布于 2024-01-18 | 分类：随笔</div>
+                <p>在这里分享一些日常的思考和感悟。生活中处处都有值得记录的精彩瞬间。</p>
+            </article>
+        </main>
+
+        <aside>
+            <div class="widget">
+                <h3>分类</h3>
+                <ul>
+                    <li><a href="#">技术 (10)</a></li>
+                    <li><a href="#">生活 (8)</a></li>
+                    <li><a href="#">随笔 (5)</a></li>
+                    <li><a href="#">旅行 (3)</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>最近文章</h3>
+                <ul>
+                    <li><a href="#">这是一篇博客文章标题</a></li>
+                    <li><a href="#">另一篇精彩的博客文章</a></li>
+                    <li><a href="#">分享一些有趣的想法</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>标签云</h3>
+                <ul>
+                    <li><a href="#">编程</a></li>
+                    <li><a href="#">设计</a></li>
+                    <li><a href="#">思考</a></li>
+                    <li><a href="#">阅读</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
